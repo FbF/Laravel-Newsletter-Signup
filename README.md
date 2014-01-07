@@ -9,8 +9,10 @@ A Laravel 4 Package for adding newsletter signup (and unsubscribe) functionality
 * Controller actions to handle the submissions of the forms, which can handle normal (redirects to previous page), or AJAX requests (responds with JSON with status code and message)
 * Translation approach for customising labels, buttons, feedback messages and validation errors
 * Currently only supports saving to a database through a supplied Eloquent model (migration included), but will hopefully be extended to support mailing list API services in future
-* Includes a FrozenNode/Laravel-Administrator config file with Download Signups CSV and Download Unsubscribes CSV buttons
+* Includes a FrozenNode/Laravel-Administrator config file with Download Signups CSV and Download Unsubscribes CSV buttons. You can filter by dates on the created_at and deleted_at fields to get newly created and newly deleted emails to upload new subscriptions and unsubscriptions to your mailer
 * Twitter bootstrap compatible markup and class names for the forms
+* Unsubscribing has the affect of deleting (soft delete) the email address from the signups table
+* Re-subscribing has the affect of restoring (restore from soft delete) the email address in the signups table
 
 ## Installation
 
